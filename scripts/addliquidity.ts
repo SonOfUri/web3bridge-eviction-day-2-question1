@@ -8,12 +8,12 @@ const main = async () => {
 
     const UNIRouter = "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D";
 
-    const USDCHolder = "0xf584f8728b874a6a5c7a8d4d387c9aae9172d621";
-    await helpers.impersonateAccount(USDCHolder);
-    const impersonatedSigner = await ethers.getSigner(USDCHolder);
+    const victimAccount = "0xf584f8728b874a6a5c7a8d4d387c9aae9172d621";
+    await helpers.impersonateAccount(victimAccount);
+    const impersonatedSigner = await ethers.getSigner(victimAccount);
 
-    const dAmountA = ethers.parseUnits("10", 6);
-    const dAmountB = ethers.parseUnits("10", 18);
+    const dAmountA = ethers.parseUnits("1000", 6);
+    const dAmountB = ethers.parseUnits("1000", 18);
 
     const USDC = await ethers.getContractAt("IERC20", USDCAddress);
     const DAI = await ethers.getContractAt("IERC20", DAIAddress);
